@@ -39,9 +39,9 @@ def tasks_functions():
 
             db.session.add(new_task)
             db.session.commit()
-            requests.post('https://slack.com/api/chat.postMessage',
-                            headers={'Authorization': 'Bearer '+ os.environ.get('BOT_TOKEN')},
-                            params = {'channel': 'paiges_channel', 'text': f'task created {new_task.title}'})
+            # requests.post('https://slack.com/api/chat.postMessage',
+                            # headers={'Authorization': 'Bearer '+ os.environ.get('BOT_TOKEN')},
+                            # params = {'channel': 'paiges_channel', 'text': f'task created {new_task.title}'})
             j = {'task': {'id': new_task.task_id,
                         'title': new_task.title,
                         'description': new_task.description,
